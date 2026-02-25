@@ -13,12 +13,12 @@ def broadcast(data):
     if clients != []:
         for client in clients:
             client.send(data.encode())
-        print('[data broadcasted]')
+        print(f'[data \{{data}\} broadcasted]')
 def loop(sock,addr):
     if str(addr) in client_data:
-            f'[{cliend_data[str(addr)]} conectou-se]'
+            broadcast(f'[{cliend_data[str(addr)]} conectou-se]')
         else:
-            f'[{addr} conectou-se]'
+            broadcast(f'[{addr} conectou-se]')
     while True:
         try:
             rdata = sock.recv(1024).decode()
@@ -57,3 +57,4 @@ def connection():
 server.listen(5)
 
 connection()
+
