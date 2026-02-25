@@ -3,7 +3,7 @@ import socket
 import threading
 
 client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-client.connect((input('HOST IP:'),55555))
+client.connect((input('HOST IP: '),55555))
 
 DATA = ''
 def recv():
@@ -20,3 +20,4 @@ while True:
     data = input()
 
     client.send(data.encode())
+
