@@ -11,7 +11,7 @@ def recv():
         data = client.recv(1024).decode()
         if data:
             DATA += '\n'+data
-            os.run('cls')
+            os.system('cls')
             print(DATA)
 thread = threading.Thread(target=recv)
 thread.start()
@@ -20,4 +20,5 @@ while True:
     data = input()
 
     client.send(data.encode())
+
 
